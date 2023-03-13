@@ -41,11 +41,11 @@ if(isset($_GET['password-length'])){
     $length= $_GET['password-length'];
 
     function generate_password($length){
-        $caratteri="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        $caratteri="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $password="";
 
-        for($i=0, $i<$length, $i++){
-            $password .= $caratteri[rand(0, strlen($caratteri-1))];
+        for($i=0; $i<$length; $i++){
+            $password .= $caratteri[rand(0, strlen($caratteri)-1)];
         }
         return $password;
     }
